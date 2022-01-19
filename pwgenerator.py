@@ -1,7 +1,7 @@
 # import modul yang diperlukan
 import random
 import string
-import glob
+# import glob
 
 # definisi data
 huruf = string.ascii_letters
@@ -157,7 +157,7 @@ def savefile(value):
             f.write(password)
             f.close()
 
-            results = glob.glob(f'./**/{nama_file}.txt')
+#             results = glob.glob(f'./**/{nama_file}.txt')
             print(f'Password berhasil disimpan dengan nama {nama_file} tersimpan satu folder dengan file python ini')
             break
             # keluarapp(value)
