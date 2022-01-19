@@ -1,7 +1,8 @@
 # import modul yang diperlukan
 import random
 import string
-# import glob
+import glob
+import os
 
 # definisi data
 huruf = string.ascii_letters
@@ -47,7 +48,7 @@ def menu(value):
         sys.exit()
 
     jenis_password = jeniss_password
-    print(jenis_password)
+    # print(jenis_password)
     return passlong(value)
 
 
@@ -57,15 +58,15 @@ def passlong(value):
         while value:
             try:
                 panjang = int(input('\nMasukan panjang Password: '))
-                passmaker(value)
-                # break
+                # passmaker(value)
+                break
             except:
                 print('Hanya bisa menerima angka')
     else:
         menu(value)
 
 
-    return panjang
+    return  passmaker(value)
 
 # pembuatan password
 def passmaker(value):
@@ -157,7 +158,7 @@ def savefile(value):
             f.write(password)
             f.close()
 
-#             results = glob.glob(f'./**/{nama_file}.txt')
+            results = glob.glob(f'./**/{nama_file}.txt')
             print(f'Password berhasil disimpan dengan nama {nama_file} tersimpan satu folder dengan file python ini')
             break
             # keluarapp(value)
@@ -181,7 +182,7 @@ def keluarapp(value):
     keluar = input('Yes or No: ').lower()
     if keluar == "yes" or keluar == "y":
         print('exit')
-        sys.exit()
+        exit(0)
     elif  keluar == "no" or keluar == "n":
         menu(value)
     else:
